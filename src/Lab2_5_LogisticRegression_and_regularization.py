@@ -100,7 +100,7 @@ class LogisticRegressor:
             # TODO: Implement the gradient values
             # CAREFUL! You need to calculate the gradient of the loss function (*negative log-likelihood*)
             dw = (1/m) * (X.T @ (y_hat - y))  # Derivative w.r.t. the coefficients
-            db = np.mean(y_hat - y)  # Derivative w.r.t. the intercept
+            db = np.sum(y_hat - y) / m  # Derivative w.r.t. the intercept
 
             # Regularization:
             # Apply regularization if it is selected.
